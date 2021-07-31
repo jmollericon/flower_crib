@@ -5,14 +5,14 @@ import { StatusBar } from 'expo-status-bar'
 import { Formik } from 'formik'
 
 // icons
-import { Octicons, Ionicons } from '@expo/vector-icons'
+import { Octicons, Ionicons , Fontisto} from '@expo/vector-icons'
 
-import { StyledContainer, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, RightIcon, Colors } from '../components/styles'
+import { StyledContainer, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, RightIcon, StyledButton, ButtonText, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent, Colors } from '../components/styles'
 import { View } from 'react-native'
 import { set } from 'lodash'
 
 // Colors
-const { brand, darkLight } = Colors;
+const { brand, darkLight, primary } = Colors;
 
 const Login = () => {
   const [hidePassword, setHidePassword] = useState(true)
@@ -57,6 +57,21 @@ const Login = () => {
               hidePassword={hidePassword}
               setHidePassword={setHidePassword}
             />
+            <MsgBox>...</MsgBox>
+            <StyledButton onPress={handleSubmit}>
+              <ButtonText>Login</ButtonText>
+            </StyledButton>
+            <Line />
+            <StyledButton google={true} onPress={handleSubmit}>
+              <Fontisto name='google' color={primary} size={25} />
+              <ButtonText google={true}>Sign in with Google</ButtonText>
+            </StyledButton>
+            <ExtraView>
+              <ExtraText>Don't have an account alredy?</ExtraText>
+              <TextLink>
+                <TextLinkContent>Signup</TextLinkContent>
+              </TextLink>
+            </ExtraView>
           </StyledFormArea>
         )}
 
