@@ -9,15 +9,12 @@ import { Octicons, Ionicons , Fontisto} from '@expo/vector-icons'
 
 import { StyledContainer, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFormArea, LeftIcon, StyledInputLabel, StyledTextInput, RightIcon, StyledButton, ButtonText, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent, Colors } from '../components/styles'
 import { View } from 'react-native'
-import { set } from 'lodash'
 
 // Colors
 const { brand, darkLight, primary } = Colors;
 
 const Login = () => {
   const [hidePassword, setHidePassword] = useState(true)
-
-
 
   return (
     <StyledContainer>
